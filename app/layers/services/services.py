@@ -15,10 +15,10 @@ def getAllImages(input=None):
     for imagenesCrudas in json_collection:
         card = Card(
             url=imagenesCrudas['image'], #IMAGEN DEL PERSONAJE
-            nombrePersonaje=imagenesCrudas.get('title', 'Sin título'), #NOMBRE DEL PERSONAJE
-            estado=imagenesCrudas.get('status', 'Desconocido'), #ESTADO DEL PERSONAJE
-            ultimaLocalizacion=imagenesCrudas.get('last_location', 'Desconocido'), #ULT LOCALIZACIÓN DEL PERSONAJE
-            episodio=imagenesCrudas.get('first_seen', 'Fecha no especificada') #EPISODIO DEL PERSONAJE
+            name=imagenesCrudas.get('title', 'Sin título'), #NOMBRE DEL PERSONAJE
+            status=imagenesCrudas.get('status', 'Desconocido'), #ESTADO DEL PERSONAJE
+            last_location=imagenesCrudas.get('last_location', 'Desconocido'), #ULT LOCALIZACIÓN DEL PERSONAJE
+            first_seen=imagenesCrudas.get('first_seen', 'Fecha no especificada') #EPISODIO DEL PERSONAJE
         )
         images.append(card)
     return images
