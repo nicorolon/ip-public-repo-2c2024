@@ -3,7 +3,7 @@
 from ..persistence import repositories
 from ..utilities import translator
 from django.contrib.auth import get_user
-from ..transport import getAllImages as transport_getAllImages
+from ..transport.transport import getAllImages as transport_getAllImages
 from ..utilities.card import Card
 
 def getAllImages(input=None):
