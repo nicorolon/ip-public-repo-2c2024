@@ -1,0 +1,3 @@
+ECHO est  activado.
+*.pyc
+__pycache__/
