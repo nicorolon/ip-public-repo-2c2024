@@ -1,3 +1,6 @@
 ECHO est� activado.
 **/__pycache__/
 *.pyc
+# Ignorar el entorno virtual
+/env/
+/.env/
