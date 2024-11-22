@@ -8,9 +8,9 @@ from ..utilities.card import Card
 
 def getAllImages(input=None):
     # obtiene un listado de datos "crudos" desde la API, usando a transport.py.
-    json_collection = transport.getAllImages()
+    json_collection = transport.getAllImages() #corrección de no iterable con ()
 
-    # recorre cada dato crudo de la colección anterior, lo convierte en una Card y lo agrega a images.
+    #recorre cada dato crudo de la colección anterior, lo convierte en una Card y lo agrega a images
     images = []
     for imagenesCrudas in json_collection:
         cards_traducidas=translator.fromRequestIntoCard(imagenesCrudas)
