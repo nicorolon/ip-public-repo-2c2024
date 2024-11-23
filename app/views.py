@@ -18,12 +18,16 @@ def home(request):
     return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
 
 def search(request):
-    search_msg = request.POST.get('query', '')
+    search_msg = request.POST.get('query', '').strip()  #Acá elimino los espacios que pueden dificultar la comparación
 
     # si el texto ingresado no es vacío, trae las imágenes y favoritos desde services.py,
     # y luego renderiza el template (similar a home).
     if (search_msg != ''):
-        pass
+        images =services.getAllImages(search_msg)
+        
+        favourite_list = []
+        
+        return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
     else:
         return redirect('home')
 
