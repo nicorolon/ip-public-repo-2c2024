@@ -15,7 +15,7 @@ def index_page(request):
 def home(request):
     images =services.getAllImages()
 
-    favourite_list =  repositories.getAllFavourites(request.user)
+    favourite_list = []
 
     return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
 
@@ -27,7 +27,7 @@ def search(request):
     if (search_msg != ''):
         images =services.getAllImages(search_msg)
         
-        favourite_list =  favourite_list = repositories.getAllFavourites(request.user)
+        favourite_list = []
         
         return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
     else:
@@ -52,5 +52,7 @@ def deleteFavourite(request):
 
 @login_required
 def exit(request):
+    # Cerrar la sesión
     logout(request)
+    # Redirigir al usuario a la página de inicio de sesión
     return redirect('login')
