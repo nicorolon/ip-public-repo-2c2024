@@ -4,7 +4,6 @@ from ..persistence import repositories
 from ..utilities import translator
 from django.contrib.auth import get_user
 from ..transport.transport import getAllImages as transport_getAllImages
-from ..utilities.card import Card
 
 def getAllImages(input=None):
 
@@ -20,7 +19,7 @@ def getAllImages(input=None):
 
 
 # añadir favoritos (usado desde el template 'home.html')
-def saveFavourite(request): #25/11/24
+def saveFavourite(request):
     fav = translator.fromTemplateIntoCard(request) # transformamos un request del template en una Card.
     fav.user = request.user # le asignamos el usuario correspondiente.
 
